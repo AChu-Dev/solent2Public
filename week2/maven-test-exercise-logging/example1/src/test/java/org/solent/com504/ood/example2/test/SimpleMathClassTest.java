@@ -43,5 +43,51 @@ public class SimpleMathClassTest {
     }
     
     // add tests for subtract, multiply, divide
-    
+    @Test
+    public void testSubtract() {
+        SimpleMathClass simpleMathClass = new SimpleMathClass();
+        String[] args = {"subtract","1.5", "300"};
+        double result = simpleMathClass.subtract(1.5, 300);
+
+        // expected, result, delta (compare floating point numbers
+        Assert.assertEquals(-298.5, result, 0.00001);
+    }
+
+    @Test
+    public void testMultiply() {
+        try{
+            SimpleMathClass simpleMathClass = new SimpleMathClass();
+            double result = simpleMathClass.multiply(300, 2);
+
+            Assert.assertEquals(600, result,0.00000);
+    }
+        catch (Exception e){
+            System.out.println("Failed Test" + e);
+        }
+    }
+
+    @Test
+    public void testDivide() {
+        try{
+            SimpleMathClass simpleMathClass = new SimpleMathClass();
+            double result = simpleMathClass.divide(300, 2);
+
+            Assert.assertEquals(150, result,0.00001);
+        }
+        catch (Exception e){
+            System.out.println("Failed Test" + e);
+        }
+    }
+
+    @Test
+    public void testMultiply2() {
+        try{
+            String[] args = {"divide","1.12312569878758757575885", "300"};
+            SimpleMathClass simpleMathClass = new SimpleMathClass();
+            double result = simpleMathClass.multiply(1.12312569878758757575885, 300);
+        }
+        catch (Exception e){
+            System.out.println("Failed Test" + e);
+        }
+    }
 }
